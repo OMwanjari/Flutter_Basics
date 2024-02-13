@@ -1,20 +1,29 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_application_1/text1.dart';
+
+const startAlignment = Alignment.topLeft;
+const endAlignment = Alignment.bottomRight;
+
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key}); //constructor function
+  const GradientContainer(this.colors, {super.key}); //constructor function
+
+  final List<Color> colors;
+
   @override
   Widget build(context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: [Color.fromARGB(255, 184, 149, 244), Colors.deepPurple],
+              colors: colors,
               begin: Alignment.topLeft,
               end: Alignment.bottomRight)),
-      child: const Center(
-          child: Text(
-        'Ram Ram Saryane',
-        style: TextStyle(color: Colors.white, fontSize: 28),
-      )),
+      child: Center(
+        child: Image.asset(
+          'assets/images/dice.png',
+          width: 200,
+        ),
+      ),
     );
   }
 }
